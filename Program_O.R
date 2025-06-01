@@ -162,7 +162,7 @@ for (j in 1:max_equip){
 
 mcfs_ara[,ncol(mcfs_ara)] <- rowMeans(mcfs_ara[,1:5])
 
-plot(y = mcfs_ara[, 6], x = tempos_mcf, type = "l", main = "MCF Plot",
+plot(y = mcfs_ara[, 6], x = tempos_mcf, type = "l", main = "MCF Plot ARA",
      xlab = "Tempo", ylab = "MCF", col = "blue")
 
 # Adicionando mcf_nao_parametrica como pontos pontilhados
@@ -173,8 +173,8 @@ points(x = tempos_mcf, y = mcf_nao_parametrica, pch = 16, col = "red")
 #ARI_m MCF
 #Ajuste inicial dos dados
 
-m <- 20
-par <- c(1.898,7.652,0.639)
+m <- 28
+par <- c(1.898,7.652,0.672)
 mcfs_ari <- matrix(nrow = length(tempos_mcf), ncol = max(dados$equip) + 1)
 
 dados_ari <- dados %>% mutate(tempo_ent = tempo_f-tempo_i) %>%
@@ -244,7 +244,7 @@ mcf_nao_parametrica <- c(
   24.2, 24.4, 24.65, 24.9, 25.15, 25.4, 25.7333, 26.2333, 27.2333
 )
 
-plot(y = mcfs_ari[, 6], x = tempos_mcf, type = "l", main = "MCF Plot",
+plot(y = mcfs_ari[, 6], x = tempos_mcf, type = "l", main = "MCF Plot ARI",
      xlab = "Tempo", ylab = "MCF", col = "blue")
 
 # Adicionando mcf_nao_parametrica como pontos pontilhados
